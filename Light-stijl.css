@@ -1,0 +1,186 @@
+html {
+  background-color: #dfe6e9; /*lichtgrijs*/
+  height: 100%;
+}
+
+/* kleuren:
+    zwartgrijs: #222222
+    donkergrijs: #2d3436
+    rood: #f85658
+    grijs: white
+    lichtgrijs: #dfe6e9
+*/
+
+/*------------------------------- HEADER -------------------------------*/
+
+
+
+header {
+  position: fixed;
+  background-color: white; /*grijs*/
+  width: 100vw;
+  margin-top: -8rem;
+  z-index: 10;
+}
+
+.headerCirkel1 {
+  position: absolute;
+  top: 3rem;
+  width: 10px;
+  height: 10px;
+  background: #f85658; /*rood*/
+  border-radius: 50%;
+  animation-name: bewegendeCirkel;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bewegendeCirkel {
+0% {
+transform: translate(0.1vw,0);
+opacity: 0.5;}
+98% {
+opacity: 0.5;}
+99% {
+transform: translate(100vw,0);
+opacity: 0;}
+100% {
+transform: translate(0.1vw,0);
+opacity: 0;}
+}
+
+h1 {
+  color: black;
+  font-family: 'Raleway', sans-serif;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+h1 span {
+  display: block;
+}
+
+h1:hover {
+	color: #f85658; /*rood*/
+}
+
+.aboutMe , .mainPage {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5rem;
+  color: #2d3436; /*donkergrijs*/
+  margin-top: 8rem;
+}
+
+.mainPage {
+  display: none;
+}
+
+
+
+/*------------------------------- MAIN -------------------------------*/
+
+
+main {
+  column-count: 1;
+  background-color: white; /*grijs*/
+  margin-top: -2rem;
+  padding: 1rem;
+}
+
+a {
+	display: block;
+	margin-bottom: 3rem;
+	break-inside: avoid;
+	/* https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside */
+	text-decoration: none;
+	color: black;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+	margin-bottom: 2rem;
+}
+
+.lightmode , .darkmode {
+  height: 3rem;
+  width: 3rem;
+  text-decoration: none;
+  position: fixed;
+  bottom: 0;
+}
+
+h2 {
+  margin-top: -1rem;
+	color: black;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	font-family: sans-serif;
+}
+
+
+
+/*------------------------------- section -------------------------------*/
+
+section {
+  display: none;
+  column-count: 1;
+  background-color: white; /*grijs*/
+  margin-top: -2rem;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section a {
+  display: block;
+	margin-bottom: 3rem;
+	break-inside: avoid;
+	/* https://developer.mozilla.org/en-US/docs/Web/CSS/break-inside */
+	text-decoration: none;
+	color: black;
+}
+
+section img {
+  max-width: 100%;
+	display: block;
+	margin-bottom: 2rem;
+}
+
+section h2 {
+  font-weight: lighter;
+}
+
+
+
+/*------------------------------- FOOTER -------------------------------*/
+
+
+.lightmode {
+  right: 5.4rem;
+}
+
+.darkmode {
+  right: 1.4rem;
+}
+
+@supports (grid-area: auto) {
+
+	@media (min-width: 800px) {
+    main {
+  		column-count: 2;
+  		column-gap: 5vw;
+      padding: 2rem;
+  	}
+	}
+
+	@media (min-width: 1200px) {
+    main {
+			min-height: 88vh;
+      column-count: 3;
+      padding: 4rem;
+		}
+	}
+}
